@@ -1,0 +1,66 @@
+<div class="product-list">
+    <div class="top-bar">
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." [formControl]="searchText">
+        </div>
+
+        <div class="add-button">
+            <a href="producto/agregar">Agregar</a>
+        </div>
+
+    </div>
+    <div *ngIf="message.isLoading" class="loading-indicator">
+        {{ message.text }}
+    </div>
+    <div *ngIf="!message.isLoading && products.length === 0">
+        No se encontraron productos.
+    </div>
+    <table *ngIf="!message.isLoading">
+        <thead>
+            <tr>
+                <th>Logo</th>
+                <th>Nombre del producto</th>
+                <th>Descripción <i class="fa-solid fa-circle-info"></i></th>
+                <th>Fecha de liberación <i class="fa-solid fa-circle-info"></i></th>
+                <th>Fecha de reestructuración <i class="fa-solid fa-circle-info"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of paginatedProducts; let i = index">
+                <td><img [src]="product.logo" alt="Logo"></td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.date_release | date }}</td>
+                <td>{{ product.date_revision | date }}</td>
+                <td>
+                    <app-custom-menu [menuItems]="getMenuItems(product)"></app-custom-menu>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pagination-controls">
+        <div class="paginator">
+            <button (click)="previousPage()" [disabled]="currentPage === 1">
+                <i class="fas fa-chevron-left"></i> Anterior
+            </button>
+            <span>Página {{currentPage}} de {{totalPages}}</span>
+            <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+                Siguiente <i class="fas fa-chevron-right"></i>
+            </button>
+
+        </div>
+        <div class="showTotal">
+            <span>Mostrando {{startIndex}} a {{endIndex}} de {{products.length}} resultados</span>
+        </div>
+        <div class="pagination-select-wrapper">
+            <span>Mostrar</span>
+            <select [formControl]="itemsPerPageControl" class="pagination-select">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+            </select>
+            <span>resultados</span>
+        </div>
+    </div>
+</div>
