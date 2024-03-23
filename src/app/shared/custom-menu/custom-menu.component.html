@@ -1,0 +1,9 @@
+<!-- custom-menu.component.html -->
+<div class="menu-container" (click)="toggleMenu()">
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+    <div class="menu-content" *ngIf="isMenuOpen">
+        <div *ngFor="let item of menuItems" (click)="selectItem(item.action)">
+            {{ item.text }}
+        </div>
+    </div>
+</div>
