@@ -3,26 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './products/components/product-list/product-list.component';
-import { ProductItemComponent } from './products/components/product-item/product-item.component';
-import { ProductFormComponent } from './products/components/product-form/product-form.component';
-import { ProductEditComponent } from './products/components/product-edit/product-edit.component';
-import { ProductDeleteComponent } from './products/components/product-delete/product-delete.component';
+import { ProductListComponent } from './products/pages/product-list/product-list.component';
+import { ProductFormComponent } from './products/pages/product-form/product-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomAlertComponent } from './shared/custom-alert/custom-alert.component';
+import { CustomAlertService } from './services/custom-alert/custom-alert.service';
+import { CustomMenuComponent } from './shared/custom-menu/custom-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    ProductItemComponent,
     ProductFormComponent,
-    ProductEditComponent,
-    ProductDeleteComponent
+    CustomAlertComponent,
+    CustomMenuComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [CustomAlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
