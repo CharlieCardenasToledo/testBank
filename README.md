@@ -55,14 +55,18 @@ Representa módulos basados en características. Este proyecto incluye un módul
 | -------------- | -------------------------------------------------------------------------- | ----------------------- | ---------- |
 | `formatDate` | Formatea una fecha desde una cadena o un objeto `Date` a `YYYY-MM-DD`. | `date: string \| Date` | `string` |
 
-`form-validation.service.ts`: Servicio para validar entradas de formulario.| Método                                   | Descripción                                                                                                  | Parámetros             | Retorna         |
+`form-validation.service.ts`: Servicio para validar entradas de formulario.
 
+| Método                                   | Descripción                                                                                                  | Parámetros             | Retorna         |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------------- | --------------- |
 | `dateRevisionAfterDateReleaseValidator` | Valida que la fecha de revisión sea posterior a la fecha de lanzamiento, a nivel de grupo de formulario.     | Ninguno                 | `ValidatorFn` |
 | `validateCurrentOrFutureDate`           | Valida que una fecha no sea anterior a la fecha actual, aplicable a controles individuales.                   | Ninguno                 | `ValidatorFn` |
 | `dateNotPast`                           | Verifica que una fecha específica no sea del pasado, para controles individuales dentro de un `FormGroup`. | `controlName: string` | `ValidatorFn` |
 
-`pagination.service.ts`: Servicio para manejar la lógica de paginación.| Método                 | Descripción                                                                                                             | Parámetros                           | Retorna                |
+`pagination.service.ts`: Servicio para manejar la lógica de paginación.
+
+
+| Método                 | Descripción                                                                                                             | Parámetros                           | Retorna                |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------- | ---------------------- |
 | `paginateProducts`    | Pagina los productos financieros dados en base a la página actual y los elementos por página.                          | `products: FinancialProduct[]`      | `FinancialProduct[]` |
 | `setItemsPerPage`     | Establece el número de elementos por página y recalcula el total de páginas. También reinicia la página actual a 1. | `value: number, totalItems: number` | Nada (void)            |
@@ -71,7 +75,9 @@ Representa módulos basados en características. Este proyecto incluye un módul
 | `getCurrentPage`      | Obtiene la página actual.                                                                                               | N/A                                   | `number`             |
 | `getTotalPages`       | Obtiene el total de páginas.                                                                                            | N/A                                   | `number`             |
 
-`product-filter.service.ts`: Servicio para filtrar listas de productos.| Método            | Descripción                                                                                                                                   | Parámetros                                          | Retorna                |
+`product-filter.service.ts`: Servicio para filtrar listas de productos.| Método            | Descripción                                                                                                                                   
+
+| Método            | Descripción                                                                                                                                   | Parámetros                                          | Retorna                |
 | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ---------------------- |
 | `filterProducts` | Filtra una lista de productos financieros basándose en una cadena de filtro que puede coincidir con el nombre o la descripción del producto. | `products: FinancialProduct[]`, `filter: string` | `FinancialProduct[]` |
 
