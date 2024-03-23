@@ -33,7 +33,7 @@ export class PaginationService {
   setItemsPerPage(value: number, totalItems: number) {
     this.itemsPerPage = value;
     this.calculateTotalPages(totalItems);
-    this.currentPage = 1;
+    //this.currentPage = 1;
   }
 
   /**

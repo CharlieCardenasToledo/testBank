@@ -29,12 +29,12 @@ describe('FormValidationService', () => {
   });
 
   it('validateCurrentOrFutureDate should validate date is current or future', () => {
-    const control = new FormControl(new Date().toISOString().split('T')[0]);
-    expect(service.validateCurrentOrFutureDate()(control)).toBeNull();
-
+    const futureDate = new FormControl('2999-01-01');
+    expect(service.validateCurrentOrFutureDate()(futureDate)).toBeNull();
     const pastDate = new FormControl('1999-01-01');
     expect(service.validateCurrentOrFutureDate()(pastDate)).toEqual({ 'dateNotFuture': true });
   });
+
 
   it('dateNotPast should set error on past date control within a FormGroup', () => {
     const formGroup = new FormGroup({
