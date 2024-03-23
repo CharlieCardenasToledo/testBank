@@ -101,11 +101,13 @@ Archivos de configuración para diferentes entornos de despliegue como desarroll
 - `environment.ts`: Configuraciones del entorno de desarrollo.
 - `environment.prod.ts`: Configuraciones del entorno de producción.
 
-```javascript
-- production: Indica si la aplicación se ejecuta en modo de producción. En este caso, está configurado como `false`, lo que significa que la aplicación está en modo de desarrollo.
-- apiUrl: La URL base para las llamadas a la API. Aquí se especifica la ruta al microservicio de productos financieros, lo cual es crucial para que la aplicación se comunique con el backend.
-- authorId: Un identificador para el autor o usuario que realiza las operaciones. Este puede ser utilizado para trazabilidad, auditoría o control de acceso.
-```
+
+
+| Clave          | Descripción                                                                                                                       |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `production` | Indica si la aplicación se ejecuta en modo de producción. Configurado como `false` significa modo de desarrollo.               |
+| `apiUrl`     | La URL base para las llamadas a la API. Especifica la ruta al microservicio de productos financieros.                              |
+| `authorId`   | Un identificador para el autor o usuario que realiza las operaciones, utilizado para trazabilidad, auditoría o control de acceso. |
 
 # Comenzando
 
