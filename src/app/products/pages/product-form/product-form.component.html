@@ -1,0 +1,67 @@
+<div class="product-form-container">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-field">
+                <label for="id">ID</label>
+                <input type="text" id="id" formControlName="id">
+                <div *ngIf="productForm.get('id')?.errors && (productForm.get('id')?.dirty || productForm.get('id')?.touched)"
+                    class="error-message">
+                    ID no válido!
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" formControlName="name">
+                <div *ngIf="productForm.get('name')?.errors && (productForm.get('name')?.dirty || productForm.get('name')?.touched)"
+                    class="error-message">
+                    Nombre no válido!
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+
+            <div class="form-field">
+                <label for="description">Descripción</label>
+                <input type="text" id="description" formControlName="description">
+                <div *ngIf="productForm.get('description')?.errors && (productForm.get('description')?.dirty || productForm.get('description')?.touched)"
+                    class="error-message">
+                    Descripción no válido!
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label for="logo">Logo</label>
+                <input type="text" id="logo" formControlName="logo">
+                <div *ngIf="productForm.get('logo')?.errors && (productForm.get('logo')?.dirty || productForm.get('logo')?.touched)"
+                    class="error-message">
+                    logo no válido!
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-field">
+                <label for="date_release">Fecha Liberación</label>
+                <input type="date" id="date_release" formControlName="date_release">
+                <div *ngIf="productForm.get('date_release')?.errors && (productForm.get('date_release')?.dirty || productForm.get('date_release')?.touched)"
+                    class="error-message">
+                    Fecha Liberación no válido!
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label for="date_revision">Fecha Revisión</label>
+                <input type="date" id="date_revision" formControlName="date_revision">
+                <div *ngIf="productForm.get('date_revision')?.errors && (productForm.get('date_revision')?.dirty || productForm.get('date_revision')?.touched)"
+                    class="error-message">
+                    Fecha Revisión no válido!
+                </div>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="button" (click)="onReset()">Reiniciar</button>
+            <button type="submit">{{ isEditMode ? 'Actualizar' : 'Agregar' }}</button>
+        </div>
+    </form>
+</div>
