@@ -112,8 +112,8 @@ Archivos de configuración para diferentes entornos de despliegue como desarroll
 Para comenzar con este proyecto, clona el repositorio, instala las dependencias y ejecuta el servidor de desarrollo.
 
 ```bash
-git  clone <url-del-repositorio>
-cd <directorio-del-proyecto>
+git  clone https://github.com/CharlieCardenasToledo/testBank.git
+cd testBank
 npm  install
 ng  serve
 ```
