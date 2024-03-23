@@ -19,7 +19,7 @@ Contiene clases de un solo uso y servicios singleton esenciales para la aplicaci
     | `checkProductIdExists(productId)` | Verifica si un ID de producto financiero existe.      |
 - `models`: Definiciones de modelos de datos e interfaces.
 
-  - `menu.ts`:  Define una interfaz para elementos del menú con texto y una acción.
+  - [menu.ts](https://github.com/CharlieCardenasToledo/testBank/blob/main/src/app/core/models/menu.ts "menu.ts")::  Define una interfaz para elementos del menú con texto y una acción.
   - `product.model.ts`:  Define una interfaz para un producto financiero, incluyendo ID, nombre, descripción y demás propiedades relevantes.
 
 ## Módulo de Características
