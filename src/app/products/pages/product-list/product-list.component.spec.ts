@@ -5,10 +5,9 @@ import { Router } from '@angular/router';
 import { CustomAlertService } from 'src/app/services/custom-alert/custom-alert.service';
 import { ProductFilterService } from 'src/app/services/product-filter/product-filter.service';
 import { PaginationService } from 'src/app/services/pagination/pagination.service';
-import { ReactiveFormsModule, FormControl } from '@angular/forms';
-import { of, throwError } from 'rxjs';
+import { ReactiveFormsModule } from '@angular/forms';
+import { of } from 'rxjs';
 
-// Mock classes
 class MockProductApiService {
   getProducts = jasmine.createSpy().and.returnValue(of([{ /* Mock product data */ }]));
   deleteProduct = jasmine.createSpy().and.returnValue(of({}));
