@@ -19,15 +19,16 @@ Contiene clases de un solo uso y servicios singleton esenciales para la aplicaci
     | `checkProductIdExists(productId)` | Verifica si un ID de producto financiero existe.      |
 - `models`: Definiciones de modelos de datos e interfaces.
 
-  - [menu.ts](https://github.com/CharlieCardenasToledo/testBank/blob/main/src/app/core/models/menu.ts "menu.ts")::  Define una interfaz para elementos del menú con texto y una acción.
-  - `product.model.ts`:  Define una interfaz para un producto financiero, incluyendo ID, nombre, descripción y demás propiedades relevantes.
+  - [menu.ts](https://github.com/CharlieCardenasToledo/testBank/blob/main/src/app/core/models/menu.ts "menu.ts"):  Define una interfaz para elementos del menú con texto y una acción.
+  - [product.model.ts](https://github.com/CharlieCardenasToledo/testBank/blob/main/src/app/core/models/product.model.ts "product.model.ts"):  Define una interfaz para un producto financiero, incluyendo ID, nombre, descripción y demás propiedades relevantes.
 
 ## Módulo de Características
 
 Representa módulos basados en características. Este proyecto incluye un módulo de característica `products`.
 
-- `product-form`: Componentes relacionados con la funcionalidad del formulario de producto.
-- `product-list`: Componentes para mostrar una lista de productos.
+- [product-form](https://github.com/CharlieCardenasToledo/testBank/tree/main/src/app/products/pages/product-form "product-form"): Componentes relacionados con la funcionalidad del formulario de producto.
+- [product-list](https://github.com/CharlieCardenasToledo/testBank/tree/main/src/app/products/pages "product-list"): Componentes para mostrar una lista de productos.
+
 
 ## Módulo Compartido
 
