@@ -8,14 +8,16 @@ Contiene clases de un solo uso y servicios singleton esenciales para la aplicaci
 
 - `http`: Contiene servicios que manejan solicitudes HTTP.
 
-  - [product-api.service.ts](https://github.com/CharlieCardenasToledo/testBank/blob/main/src/app/core/http/product-api.service.ts "product-api.services.ts"): Servicio para llamadas a la API relacionadas con productos.| Función                            | Descripción                                          |
-    | ----------------------------------- | ----------------------------------------------------- |
-    | `getProducts()`                   | Obtiene todos los productos financieros disponibles.  |
-    | `getProductById(productId)`       | Obtiene un producto financiero específico por su ID. |
-    | `addProduct(product)`             | Añade un nuevo producto financiero.                  |
-    | `updateProduct(product)`          | Actualiza un producto financiero existente.           |
-    | `deleteProduct(productId)`        | Elimina un producto financiero por su ID.             |
-    | `checkProductIdExists(productId)` | Verifica si un ID de producto financiero existe.      |
+  - [product-api.service.ts](https://github.com/CharlieCardenasToledo/testBank/blob/main/src/app/core/http/product-api.service.ts "product-api.services.ts"): Servicio para llamadas a la API relacionadas con productos.
+
+  | Función                            | Descripción                                          |
+  | ----------------------------------- | ----------------------------------------------------- |
+  | `getProducts()`                   | Obtiene todos los productos financieros disponibles.  |
+  | `getProductById(productId)`       | Obtiene un producto financiero específico por su ID. |
+  | `addProduct(product)`             | Añade un nuevo producto financiero.                  |
+  | `updateProduct(product)`          | Actualiza un producto financiero existente.           |
+  | `deleteProduct(productId)`        | Elimina un producto financiero por su ID.             |
+  | `checkProductIdExists(productId)` | Verifica si un ID de producto financiero existe.      |
 - `models`: Definiciones de modelos de datos e interfaces.
 
   - [menu.ts](https://github.com/CharlieCardenasToledo/testBank/blob/main/src/app/core/models/menu.ts "menu.ts"):  Define una interfaz para elementos del menú con texto y una acción.
@@ -49,13 +51,12 @@ Representa módulos basados en características. Este proyecto incluye un módul
 
 - `date-formatting.service.ts`: Servicio para manejar el formato de fechas
 
-
 | Método        | Descripción                                                               | Parámetros             | Retorna    |
-
 | -------------- | -------------------------------------------------------------------------- | ----------------------- | ---------- |
 | `formatDate` | Formatea una fecha desde una cadena o un objeto `Date` a `YYYY-MM-DD`. | `date: string \| Date` | `string` |
 
 `form-validation.service.ts`: Servicio para validar entradas de formulario.| Método                                   | Descripción                                                                                                  | Parámetros             | Retorna         |
+
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------------- | --------------- |
 | `dateRevisionAfterDateReleaseValidator` | Valida que la fecha de revisión sea posterior a la fecha de lanzamiento, a nivel de grupo de formulario.     | Ninguno                 | `ValidatorFn` |
 | `validateCurrentOrFutureDate`           | Valida que una fecha no sea anterior a la fecha actual, aplicable a controles individuales.                   | Ninguno                 | `ValidatorFn` |
