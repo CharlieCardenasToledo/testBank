@@ -1,0 +1,62 @@
+/* custom-alert.component.scss */
+.custom-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .custom-alert {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 40vw;
+    font-size: 14px;
+
+    &-header h4 {
+      margin: 0;
+    }
+
+    &-body,
+    &-footer {
+      margin-top: 20px;
+    }
+
+    &-footer {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      button {
+        margin: 0;
+
+        &.btnConfirm,
+        &.btnDeny {
+          height: 40px;
+          width: max-content;
+          font-size: 14px;
+          font-weight: bold;
+          padding: 8px 24px;
+          border-radius: 4px;
+          border: 0;
+          cursor: pointer;
+          text-decoration: none;
+        }
+
+        &.btnConfirm {
+          background-color: #ffdd00;
+          color: #0f265c;
+        }
+
+        &.btnDeny {
+          background-color: #f6f6f6;
+          color: #0f265c;
+        }
+      }
+    }
+  }
+}

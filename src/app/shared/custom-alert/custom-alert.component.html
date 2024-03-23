@@ -1,0 +1,16 @@
+<!-- custom-alert.component.html -->
+<div class="custom-alert-overlay" *ngIf="showAlert">
+    <div class="custom-alert">
+        <div class="custom-alert-header">
+            <h4>{{ title }}</h4>
+            <img *ngIf="icon" [src]="icon" class="custom-alert-icon">
+        </div>
+        <div class="custom-alert-body">
+            <p>{{ message }}</p>
+        </div>
+        <div class="custom-alert-footer">
+            <button *ngIf="showCancelButton" (click)="deny()" class="btnDeny">{{ DenyButtonText || 'Cancelar' }}</button>
+            <button (click)="confirm()" class="btnConfirm">{{ confirmButtonText }}</button>
+        </div>
+    </div>
+</div>
