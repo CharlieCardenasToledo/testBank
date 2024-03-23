@@ -8,7 +8,8 @@ Contiene clases de un solo uso y servicios singleton esenciales para la aplicaci
 
 - `http`: Contiene servicios que manejan solicitudes HTTP.
 
-  - [product-api.service.ts](https://github.com/CharlieCardenasToledo/testBank/blob/main/src/app/core/http/product-api.service.ts): Servicio para llamadas a la API relacionadas con productos.| Función                            | Descripción                                          |
+  - [product-api.service.ts](https://github.com/CharlieCardenasToledo/testBank/blob/main/src/app/core/http/product-api.service.ts): Servicio para llamadas a la API relacionadas con productos.
+  | Función                            | Descripción                                          |
     | ----------------------------------- | ----------------------------------------------------- |
     | `getProducts()`                   | Obtiene todos los productos financieros disponibles.  |
     | `getProductById(productId)`       | Obtiene un producto financiero específico por su ID. |
