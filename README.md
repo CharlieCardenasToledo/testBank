@@ -118,6 +118,7 @@ git  clone https://github.com/CharlieCardenasToledo/testBank.git
 cd testBank
 npm  install
 ng  serve
+ng test
 ```
 
 Abre tu navegador y navega a `http://localhost:4200/` para ver la aplicación.
