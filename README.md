@@ -8,8 +8,7 @@ Contiene clases de un solo uso y servicios singleton esenciales para la aplicaci
 
 - `http`: Contiene servicios que manejan solicitudes HTTP.
 
-  - `product-api.service.ts`: Servicio para llamadas a la API relacionadas con productos.
-| Función                            | Descripción                                          |
+  - `product-api.service.ts`:[ Servicio](https://github.com/CharlieCardenasToledo/testBank/blob/main/src/app/core/http/product-api.service.ts#L33) para llamadas a la API relacionadas con productos.| Función                            | Descripción                                          |
     | ----------------------------------- | ----------------------------------------------------- |
     | `getProducts()`                   | Obtiene todos los productos financieros disponibles.  |
     | `getProductById(productId)`       | Obtiene un producto financiero específico por su ID. |
@@ -40,24 +39,20 @@ Representa módulos basados en características. Este proyecto incluye un módul
 
   Encapsula la lógica de negocio y las capas de acceso a datos. Cada servicio tiene una sola responsabilidad.
 
-- `custom-alert.service.ts`: Este servicio proporciona una manera de mostrar alertas personalizadas dentro de una aplicación Angular. A continuación, se detallan los métodos disponibles en el servicio:
-  | Método                                                                           | Descripción                                                                                                                                                                                                                                                                |
+- `custom-alert.service.ts`: Este servicio proporciona una manera de mostrar alertas personalizadas dentro de una aplicación Angular. A continuación, se detallan los métodos disponibles en el servicio:| Método                                                                           | Descripción                                                                                                                                                                                                                                                                |
   | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
   | `constructor(componentFactoryResolver, appRef, injector)`                       | Constructor del servicio, inicializa el servicio con las dependencias necesarias para la creación dinámica de componentes, inyección de dependencias y gestión de la aplicación.                                                                                       |
   | `showAlert(title, message, confirmButtonText = 'Yes', showCancelButton = true)` | Muestra una alerta personalizada en la página. Permite configurar el título, mensaje, texto del botón de confirmación y si se muestra el botón de cancelar. Devuelve una promesa que se resuelve con un booleano indicando si se presionó el botón de confirmación. |
   | `removeAlertComponentFromBody(alertCompRef)`                                    | Método privado utilizado para eliminar el componente de alerta del cuerpo del documento una vez que el usuario interactúa con él. Es llamado internamente por el servicio.                                                                                               |
-- `date-formatting.service.ts`: Servicio para manejar el formato de fechas.
-  | Método        | Descripción                                                               | Parámetros             | Retorna    |
+- `date-formatting.service.ts`: Servicio para manejar el formato de fechas.| Método        | Descripción                                                               | Parámetros             | Retorna    |
   | -------------- | -------------------------------------------------------------------------- | ----------------------- | ---------- |
   | `formatDate` | Formatea una fecha desde una cadena o un objeto `Date` a `YYYY-MM-DD`. | `date: string \| Date` | `string` |
-- `form-validation.service.ts`: Servicio para validar entradas de formulario.
-  | Método                                   | Descripción                                                                                                  | Parámetros             | Retorna         |
+- `form-validation.service.ts`: Servicio para validar entradas de formulario.| Método                                   | Descripción                                                                                                  | Parámetros             | Retorna         |
   | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------------- | --------------- |
   | `dateRevisionAfterDateReleaseValidator` | Valida que la fecha de revisión sea posterior a la fecha de lanzamiento, a nivel de grupo de formulario.     | Ninguno                 | `ValidatorFn` |
   | `validateCurrentOrFutureDate`           | Valida que una fecha no sea anterior a la fecha actual, aplicable a controles individuales.                   | Ninguno                 | `ValidatorFn` |
   | `dateNotPast`                           | Verifica que una fecha específica no sea del pasado, para controles individuales dentro de un `FormGroup`. | `controlName: string` | `ValidatorFn` |
-- `pagination.service.ts`: Servicio para manejar la lógica de paginación.
-  | Método                 | Descripción                                                                                                             | Parámetros                           | Retorna                |
+- `pagination.service.ts`: Servicio para manejar la lógica de paginación.| Método                 | Descripción                                                                                                             | Parámetros                           | Retorna                |
   | ----------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------- | ---------------------- |
   | `paginateProducts`    | Pagina los productos financieros dados en base a la página actual y los elementos por página.                          | `products: FinancialProduct[]`      | `FinancialProduct[]` |
   | `setItemsPerPage`     | Establece el número de elementos por página y recalcula el total de páginas. También reinicia la página actual a 1. | `value: number, totalItems: number` | Nada (void)            |
@@ -65,8 +60,7 @@ Representa módulos basados en características. Este proyecto incluye un módul
   | `setCurrentPage`      | Establece la página actual para la paginación.                                                                         | `page: number`                      | Nada (void)            |
   | `getCurrentPage`      | Obtiene la página actual.                                                                                               | N/A                                   | `number`             |
   | `getTotalPages`       | Obtiene el total de páginas.                                                                                            | N/A                                   | `number`             |
-- `product-filter.service.ts`: Servicio para filtrar listas de productos.
-  | Método            | Descripción                                                                                                                                   | Parámetros                                          | Retorna                |
+- `product-filter.service.ts`: Servicio para filtrar listas de productos.| Método            | Descripción                                                                                                                                   | Parámetros                                          | Retorna                |
   | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ---------------------- |
   | `filterProducts` | Filtra una lista de productos financieros basándose en una cadena de filtro que puede coincidir con el nombre o la descripción del producto. | `products: FinancialProduct[]`, `filter: string` | `FinancialProduct[]` |
 
