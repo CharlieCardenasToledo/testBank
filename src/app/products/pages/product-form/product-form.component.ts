@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CustomAlertService } from 'src/app/services/custom-alert/custom-alert.service';
 import { DateFormattingService } from 'src/app/services/date-formatting/date-formatting.service';
 import { FormValidationService } from 'src/app/services/form-validation/form-validation.service';
+import { catchError, debounceTime, distinctUntilChanged, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-product-form',
@@ -74,17 +75,54 @@ export class ProductFormComponent implements OnInit {
           });
         }
       }, error => {
-        console.error('Error fetching product', error);
         this.alertService.showAlert('Error', 'Error al buscar el producto.', 'OK', false);
       });
+    } else {
+      this.formControls['id'].valueChanges.pipe(
+        debounceTime(500),
+        distinctUntilChanged(),
+        switchMap(id =>
+          this.productService.checkProductIdExists(id).pipe(
+            catchError(() => of(false))
+          )
+        )
+      ).subscribe(exists => {
+        if (exists) {
+          this.formControls['id'].setErrors({ 'idExists': true });
+        }
+      });
     }
+
+
   }
+
+  getErrorMessage(controlName: string): string {
+    const control = this.productForm.get(controlName);
+    if (control && control.errors) {
+      if (control.errors['required']) {
+        return 'Este campo es obligatorio.';
+      }
+      if (control.errors['minlength'] || control.errors['maxlength']) {
+        return `La longitud debe estar entre ${control.errors['minlength']?.requiredLength} y ${control.errors['maxlength']?.requiredLength} caracteres.`;
+      }
+      if (control.errors['idExists']) {
+        return 'El ID ya existe. Por favor, utiliza un ID diferente.';
+      }
+      if (control.errors['dateNotPast']) {
+        return 'La fecha debe ser actual o futura.';
+      }
+    }
+
+    return '';
+  }
+
   /**
     * Maneja la presentación del formulario, creando o actualizando un producto.
     */
   onSubmit() {
     if (this.productForm.valid) {
       const product = this.productForm.value;
+      console.log(product)
       if (!this.isEditMode) {
         this.productService.addProduct(product).subscribe({
           next: (response) => {
@@ -100,6 +138,7 @@ export class ProductFormComponent implements OnInit {
       } else {
         this.productService.updateProduct(product).subscribe({
           next: (response) => {
+            console.log(response);
             this.alertService.showAlert('Producto actualizado', 'El producto ha sido actualizado con éxito.', 'OK', false).then(() => {
               this.router.navigate(['/']);
             });

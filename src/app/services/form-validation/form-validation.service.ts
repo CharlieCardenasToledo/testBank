@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
-import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { AbstractControl, AsyncValidatorFn, FormGroup, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { map, Observable } from 'rxjs';
+import { ProductApiService } from 'src/app/core/http/product-api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FormValidationService {
-  constructor() { }
+  constructor(private productService: ProductApiService) { }
+
   /**
    * Valida que la fecha de revisión sea posterior a la fecha de lanzamiento.
    * Este validador se aplica a nivel de grupo de formulario, permitiendo acceder a múltiples controles del formulario.
@@ -50,7 +53,7 @@ export class FormValidationService {
           formControl.setErrors(null);
         }
       }
-      return null; 
+      return null;
     };
   }
 }
