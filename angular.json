@@ -67,12 +67,14 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+
           "configurations": {
             "production": {
               "browserTarget": "testBank:build:production"
             },
             "development": {
-              "browserTarget": "testBank:build:development"
+              "browserTarget": "testBank:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
